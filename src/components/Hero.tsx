@@ -25,7 +25,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
         >
-          Do your best.
+          Crie Documentos Psicológicos Oficiais em Minutos
         </motion.h1>
 
         {/* Subheading */}
@@ -35,8 +35,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-xl md:text-2xl mb-16"
         >
-          Pluma Docs: sistema completo de gerenciamento
-          para profissionais que querem focar no que importa.
+          Mais tempo, segurança e tranquilidade na sua rotina
         </motion.p>
 
         {/* Product Image */}
