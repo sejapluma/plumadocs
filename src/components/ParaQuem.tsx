@@ -29,8 +29,8 @@ export default function ParaQuem() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-medium mb-4">
-            É para Quem?
+          <h2 className="text-4xl md:text-5xl font-medium mb-4 text-black">
+            Pra quem é
           </h2>
           <p className="text-2xl text-gray-600">
             É para você, se:
@@ -45,9 +45,9 @@ export default function ParaQuem() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white p-6 rounded-lg border border-[#D1859D] hover:shadow-lg transition-shadow"
+              className="bg-white p-6 rounded-lg border border-[#C4A484] hover:shadow-lg transition-shadow"
             >
-              <div className="w-12 h-12 bg-[#D1859D] rounded-full flex items-center justify-center mb-4 mx-auto">
+              <div className="w-12 h-12 bg-[#C4A484] rounded-full flex items-center justify-center mb-4 mx-auto">
                 <criterio.Icon className="w-6 h-6 text-white" />
               </div>
               <p className="text-gray-700 text-center">

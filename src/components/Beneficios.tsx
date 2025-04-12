@@ -3,21 +3,17 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-const documentosAdministrativos = [
-  'Modelos de Fichas de Cadastro',
-  'Modelos de Contratos',
-  'Modelo de Autorização de Atendimento',
-  'Modelo de Controle de Presença e de Pagamento',
-  'Modelos de Cartas',
-  'Modelos de Recibos',
-  'Modelo de Declarações',
-  'Modelo de TCLE',
-  'Manuais de uso e instruções',
-  'Exemplos ficticios preenchidos',
-  '4 Templates personalizáveis para cada documento'
+const documentosPsicologicos = [
+  'Modelo de Acompanhamento psicológico',
+  'Modelo de prontuário',
+  'Modelo de laudo',
+  'Modelo de relatório',
+  'Modelo de parecer',
+  'Modelo de anamnese infantil',
+  'Modelo de anamnese adulto'
 ];
 
-export default function Produto() {
+export default function Beneficios() {
   return (
     <section className="w-full py-24 bg-white">
       <div className="max-w-[1400px] mx-auto px-4">
@@ -29,12 +25,10 @@ export default function Produto() {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-medium mb-4">
-            Veja o que tem dentro do{' '}
-            <span className="text-[#4F46E5]">
-              Pacote de Documentos Psicológicos
-            </span>
+            <span className="text-black">Por dentro do </span>
+            <span className="text-[#C4A484]">produto</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-black max-w-3xl mx-auto">
             O Pacote de Documentos Psicológicos oferece 12 modelos de documentos (com
             mais de 128 templates diferentes), cada um acompanhado de um manual de uso
             e um modelo fictício preenchido, para a melhor gestão, registro e monitoramento
@@ -68,25 +62,20 @@ export default function Produto() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-medium text-[#4F46E5] mb-4">
-              Documentos Administrativos
+            <h3 className="text-2xl font-medium text-[#C4A484] mb-4">
+              Você vai ter acesso a:
             </h3>
-            <p className="text-gray-600 mb-6">
-              Documentos essenciais para gestão e controle,
-              organizando dados, formalizando vínculos e
-              simplificando o trabalho administrativo.
-            </p>
             <ul className="space-y-3">
-              {documentosAdministrativos.map((item, index) => (
+              {documentosPsicologicos.map((item, index) => (
                 <motion.li
                   key={index}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-2 text-gray-700"
+                  className="flex items-center gap-2 text-black"
                 >
-                  <span className="text-[#4F46E5]">•</span>
+                  <span className="text-[#C4A484]">•</span>
                   {item}
                 </motion.li>
               ))}

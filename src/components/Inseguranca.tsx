@@ -16,7 +16,7 @@ export default function Inseguranca() {
           className="space-y-6"
         >
           <h2 className="text-4xl md:text-5xl font-medium leading-tight">
-            Está trabalhando com{' '}
+            <span className="text-black">Está trabalhando com </span>
             <span className="text-[#C4A484]">Insegurança?</span>
           </h2>
           

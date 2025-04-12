@@ -39,7 +39,7 @@ export default function Dores() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-medium mb-6">
-            Você quer continuar{' '}
+            <span className="text-black">Você quer continuar </span>
             <span className="text-[#C4A484]">passando por isso?</span>
           </h2>
         </motion.div>

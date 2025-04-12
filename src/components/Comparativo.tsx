@@ -31,7 +31,7 @@ const comPluma = [
 
 export default function Comparativo() {
   return (
-    <section className="w-full py-24 bg-gray-50">
+    <section className="w-full py-24 bg-white">
       <div className="max-w-[1200px] mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Coluna Sem PlumaDocs */}
@@ -69,11 +69,11 @@ export default function Comparativo() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-[#D1859D] p-8 rounded-2xl shadow-lg text-white flex flex-col h-full"
+            className="bg-[#C4A484] p-8 rounded-2xl shadow-lg flex flex-col h-full"
           >
             <div className="flex items-center gap-3 mb-8">
               <CheckCircleIcon className="w-8 h-8 text-white" />
-              <h3 className="text-2xl font-medium">Com PlumaDocs</h3>
+              <h3 className="text-2xl font-medium text-white">Com PlumaDocs</h3>
             </div>
             <ul className="space-y-6 flex-grow">
               {comPluma.map((item, index) => (
@@ -85,13 +85,11 @@ export default function Comparativo() {
                   viewport={{ once: true }}
                   className="flex flex-col gap-1"
                 >
-                  <div className="flex items-start gap-3">
-                    <CheckCircleIcon className="w-5 h-5 shrink-0 mt-1" />
-                    <span className="font-medium text-lg">{item.title}</span>
+                  <div className="flex items-center gap-3">
+                    <CheckCircleIcon className="w-5 h-5 shrink-0 text-white" />
+                    <span className="text-white text-lg font-medium">{item.title}</span>
                   </div>
-                  <p className="text-white/90 pl-8 text-base">
-                    {item.description}
-                  </p>
+                  <p className="text-white/90 ml-8">{item.description}</p>
                 </motion.li>
               ))}
             </ul>
