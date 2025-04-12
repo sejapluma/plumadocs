@@ -87,13 +87,16 @@ export default function Preco() {
             </div>
 
             <div className="pt-6">
-              <motion.button 
+              <motion.a 
+                href="https://payment.ticto.app/O17F77F98?event=PageView&product_id=85315&offer_code=O17F77F98&currency=BRL&payment_method=credit_card&visitor_id="
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-[#C4A484] text-white py-4 px-8 rounded-full font-medium text-lg hover:bg-[#B39374] transition-colors shadow-lg"
+                className="w-full bg-[#C4A484] text-white py-4 px-8 rounded-full font-medium text-lg hover:bg-[#B39374] transition-colors shadow-lg block text-center"
               >
                 Adicionar ao carrinho
-              </motion.button>
+              </motion.a>
             </div>
           </motion.div>
         </div>
