@@ -1,7 +1,28 @@
+interface FacebookPixel {
+  (method: 'init', pixelId: string, data?: Record<string, unknown>): void;
+  (method: 'track', event: string, data?: Record<string, unknown>): void;
+  (method: 'trackCustom', event: string, data?: Record<string, unknown>): void;
+  (method: 'set', property: string, value: boolean): void;
+}
+
+interface DataLayerEvent {
+  event: string;
+  ecommerce?: {
+    currency: string;
+    value: number;
+    items?: Array<{
+      item_name: string;
+      item_category: string;
+      price: number;
+      quantity: number;
+    }>;
+  };
+}
+
 declare global {
   interface Window {
-    fbq: any;
-    dataLayer: any[];
+    fbq: FacebookPixel;
+    dataLayer: DataLayerEvent[];
   }
 }
 
