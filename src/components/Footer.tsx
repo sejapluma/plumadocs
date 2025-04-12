@@ -10,15 +10,15 @@ export default function Footer() {
           </h3>
           
           <a 
-            href="mailto:suporteorganizapsi@gmail.com"
+            href="mailto:contato@sejapluma.com"
             className="block text-[#C4A484] hover:text-[#A68B6C] transition-colors"
           >
-            suporteorganizapsi@gmail.com
+            contato@sejapluma.com
           </a>
 
           <div className="pt-8 text-sm text-gray-500">
             <p>Todos os direitos reservados</p>
-            <p>© 2025 - Francielle Santiago | Psicologia</p>
+            <p>© 2025 - SejaPluma | Leveza e eficiência para psicólogas</p>
           </div>
         </div>
       </div>
