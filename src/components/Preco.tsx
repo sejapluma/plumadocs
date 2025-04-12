@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { DocumentTextIcon, RocketLaunchIcon, GiftIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
+import { trackEvent } from '@/services/analytics';
 
 const beneficios = [
   {
@@ -87,15 +88,16 @@ export default function Preco() {
             </div>
 
             <div className="pt-6">
-              <motion.a 
+              <motion.a
                 href="https://payment.ticto.app/O17F77F98"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full bg-[#C4A484] text-white py-4 px-8 rounded-full font-medium text-lg hover:bg-[#B39374] transition-colors shadow-lg block text-center"
+                onClick={() => trackEvent.beginCheckout()}
+                className="bg-[#C4A484] text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-[#B39474] transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                Adicionar ao carrinho
+                Comprar agora
               </motion.a>
             </div>
           </motion.div>
