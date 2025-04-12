@@ -88,7 +88,7 @@ export default function Preco() {
 
             <div className="pt-6">
               <motion.a 
-                href="https://payment.ticto.app/O17F77F98?event=PageView&product_id=85315&offer_code=O17F77F98&currency=BRL&payment_method=credit_card&visitor_id="
+                href="https://payment.ticto.app/O17F77F98"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
