@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { DocumentTextIcon, DocumentCheckIcon, ClipboardDocumentListIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
 const beneficios = [
   {
@@ -31,11 +32,13 @@ export default function Preco() {
             viewport={{ once: true }}
             className="w-full md:w-1/2"
           >
-            <div className="relative w-full aspect-[3/4]">
-              <img
+            <div className="relative w-full h-48 mb-4">
+              <Image
                 src="/a4_sozinha.png"
                 alt="Pacote de Documentos Psicológicos"
-                className="w-full h-full object-contain"
+                fill
+                style={{ objectFit: 'cover' }}
+                className="rounded-t-lg"
               />
             </div>
           </motion.div>

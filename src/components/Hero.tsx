@@ -25,7 +25,8 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
         >
-          Crie Documentos Psicológicos Oficiais em Minutos
+          Crie Documentos Psicológicos<br />
+          Oficiais em Minutos
         </motion.h1>
 
         {/* Subheading */}
