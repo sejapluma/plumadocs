@@ -13,7 +13,15 @@ export default function Hero() {
         transition={{ duration: 0.5 }}
         className="mb-12"
       >
-        <h2 className="text-xl font-medium tracking-wide">PLUMA DOCS</h2>
+        <div className="relative w-[200px] h-[50px]">
+          <Image
+            src="/logo-plumadocs.png"
+            alt="PlumaDocs"
+            fill
+            style={{ objectFit: 'contain' }}
+            priority
+          />
+        </div>
       </motion.div>
 
       {/* Main Content */}

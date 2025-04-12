@@ -44,7 +44,7 @@ export default function Comparativo() {
           >
             <div className="flex items-center gap-3 mb-8">
               <XCircleIcon className="w-8 h-8 text-red-500" />
-              <h3 className="text-2xl font-medium">Sem PlumaDocs</h3>
+              <h3 className="text-2xl font-medium text-black">Sem PlumaDocs</h3>
             </div>
             <ul className="space-y-6 flex-grow">
               {semPluma.map((item, index) => (
@@ -57,7 +57,7 @@ export default function Comparativo() {
                   className="flex items-start gap-3"
                 >
                   <XCircleIcon className="w-5 h-5 shrink-0 mt-1 text-red-500" />
-                  <span className="text-gray-600 text-lg">{item}</span>
+                  <span className="text-black text-lg">{item}</span>
                 </motion.li>
               ))}
             </ul>

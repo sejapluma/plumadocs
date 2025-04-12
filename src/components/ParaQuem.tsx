@@ -6,15 +6,15 @@ import { ClockIcon, DocumentTextIcon, RocketLaunchIcon } from '@heroicons/react/
 const criterios = [
   {
     Icon: ClockIcon,
-    description: 'Quer mais tempo e menos burocracia na rotina.'
+    description: 'Querem mais tempo e menos burocracia na rotina'
   },
   {
     Icon: DocumentTextIcon,
-    description: 'Valoriza organização e cuidado com a documentação.'
+    description: 'Valorizam organização e cuidado com a documentação'
   },
   {
     Icon: RocketLaunchIcon,
-    description: 'Busca uma forma mais rápida e eficiente de elaborar.'
+    description: 'Buscam uma forma mais rápida e eficiente de elaborar'
   }
 ];
 
@@ -29,12 +29,9 @@ export default function ParaQuem() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-medium mb-4 text-black">
-            Pra quem é
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-black">
+            Este produto é para psicólogas que:
           </h2>
-          <p className="text-2xl text-gray-600">
-            É para você, se:
-          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
@@ -50,7 +47,7 @@ export default function ParaQuem() {
               <div className="w-12 h-12 bg-[#C4A484] rounded-full flex items-center justify-center mb-4 mx-auto">
                 <criterio.Icon className="w-6 h-6 text-white" />
               </div>
-              <p className="text-gray-700 text-center">
+              <p className="text-black text-center text-xl">
                 {criterio.description}
               </p>
             </motion.div>

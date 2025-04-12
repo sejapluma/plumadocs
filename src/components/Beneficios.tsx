@@ -11,7 +11,8 @@ const documentosPsicologicos = [
   'Modelo de relatório',
   'Modelo de parecer',
   'Modelo de anamnese infantil',
-  'Modelo de anamnese adulto'
+  'Modelo de anamnese adulto',
+  'Modelo de atestado'
 ];
 
 export default function Beneficios() {
@@ -25,11 +26,11 @@ export default function Beneficios() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-medium mb-4">
+          <h2 className="text-6xl md:text-7xl font-medium mb-8">
             <span className="text-black">Por dentro do </span>
             <span className="text-[#C4A484]">produto</span>
           </h2>
-          <p className="text-lg text-black max-w-3xl mx-auto">
+          <p className="text-2xl md:text-3xl text-black max-w-4xl mx-auto leading-relaxed">
             O Pacote de Documentos Psicológicos oferece 8 modelos de documentos lindos e prontos para uso, 
             cada um acompanhado de um manual detalhado e um modelo fictício preenchido. 
             Desenvolvido para trazer mais tempo, segurança e tranquilidade para a sua vida profissional, 
@@ -43,14 +44,14 @@ export default function Beneficios() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative"
+            className="flex justify-center items-center"
           >
-            <div className="relative w-full aspect-[3/2] md:aspect-[2/1] lg:aspect-square">
+            <div className="relative w-[90%] aspect-square">
               <Image
                 src="/pasta-documentos.png"
                 alt="Pasta com documentos psicológicos"
                 fill
-                className="object-contain scale-125 transform hover:scale-[1.3] transition-transform duration-300"
+                className="object-contain transform hover:scale-105 transition-transform duration-300"
                 priority
               />
             </div>
@@ -61,12 +62,12 @@ export default function Beneficios() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-8"
           >
-            <h3 className="text-2xl font-medium text-[#C4A484] mb-4">
+            <h3 className="text-4xl md:text-5xl font-medium text-[#C4A484] mb-8">
               Você vai ter acesso a:
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-6">
               {documentosPsicologicos.map((item, index) => (
                 <motion.li
                   key={index}
@@ -74,9 +75,9 @@ export default function Beneficios() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-2 text-black"
+                  className="flex items-center gap-4 text-2xl md:text-3xl text-black"
                 >
-                  <span className="text-[#C4A484]">•</span>
+                  <span className="text-[#C4A484] text-3xl md:text-4xl">•</span>
                   {item}
                 </motion.li>
               ))}
@@ -98,50 +99,50 @@ export default function Beneficios() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="space-y-8"
             >
-              <h3 className="text-3xl md:text-4xl font-medium text-[#C4A484]">
+              <h3 className="text-4xl md:text-5xl font-medium text-[#C4A484]">
                 Acesso Exclusivo ao PlumaCFP
               </h3>
-              <p className="text-lg text-[#C4A484]/80">
+              <p className="text-2xl text-[#C4A484]/80">
                 Como bônus especial, você terá acesso a um aplicativo exclusivo onde poderá:
               </p>
-              <ul className="space-y-4">
+              <ul className="space-y-6">
                 <motion.li
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-3"
+                  className="flex items-start gap-4"
                 >
-                  <div className="w-8 h-8 bg-[#C4A484] rounded-full flex items-center justify-center shrink-0">
-                    <DocumentMagnifyingGlassIcon className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-[#C4A484] rounded-full flex items-center justify-center shrink-0">
+                    <DocumentMagnifyingGlassIcon className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-[#C4A484]/80">Consultar a resolução CFP em tempo real</span>
+                  <span className="text-2xl text-[#C4A484]/80">Consultar a resolução CFP em tempo real</span>
                 </motion.li>
                 <motion.li
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-3"
+                  className="flex items-start gap-4"
                 >
-                  <div className="w-8 h-8 bg-[#C4A484] rounded-full flex items-center justify-center shrink-0">
-                    <QuestionMarkCircleIcon className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-[#C4A484] rounded-full flex items-center justify-center shrink-0">
+                    <QuestionMarkCircleIcon className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-[#C4A484]/80">Tirar dúvidas sobre o preenchimento dos documentos</span>
+                  <span className="text-2xl text-[#C4A484]/80">Tirar dúvidas sobre o preenchimento dos documentos</span>
                 </motion.li>
                 <motion.li
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   viewport={{ once: true }}
-                  className="flex items-start gap-3"
+                  className="flex items-start gap-4"
                 >
-                  <div className="w-8 h-8 bg-[#C4A484] rounded-full flex items-center justify-center shrink-0">
-                    <ShieldCheckIcon className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 bg-[#C4A484] rounded-full flex items-center justify-center shrink-0">
+                    <ShieldCheckIcon className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-[#C4A484]/80">Garantir que seus documentos estejam sempre em conformidade</span>
+                  <span className="text-2xl text-[#C4A484]/80">Garantir que seus documentos estejam sempre em conformidade</span>
                 </motion.li>
               </ul>
             </motion.div>

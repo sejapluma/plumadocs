@@ -7,6 +7,7 @@ import ParaQuem from '@/components/ParaQuem';
 import Comparativo from '@/components/Comparativo';
 import Presentes from '@/components/Presentes';
 import Preco from '@/components/Preco';
+import Depoimentos from '@/components/Depoimentos';
 import Sobre from '@/components/Sobre';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
@@ -23,6 +24,7 @@ export default function Home() {
       <Comparativo />
       <Presentes />
       <Preco />
+      <Depoimentos />
       <Sobre />
       <FAQ />
       <Footer />
