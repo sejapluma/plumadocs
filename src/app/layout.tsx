@@ -72,12 +72,30 @@ export default function RootLayout({
             fbq('track', 'PageView');
           `}
         </Script>
+
+        {/* Meta Pixel Advanced Matching */}
+        <Script id="meta-pixel-advanced" strategy="afterInteractive">
+          {`
+            fbq('init', '2131985867237144', {
+              external_id: 'seu_id_externo'
+            });
+          `}
+        </Script>
+
+        {/* Meta Pixel Debug Mode */}
+        <Script id="meta-pixel-debug" strategy="afterInteractive">
+          {`
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+              fbq('set', 'debug', true);
+            }
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe 
-            src={`https://www.googletagmanager.com/ns.html?id=GTM-MMZL4HQN`}
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MMZL4HQN"
             height="0" 
             width="0" 
             style={{ display: 'none', visibility: 'hidden' }}
@@ -90,7 +108,7 @@ export default function RootLayout({
             height="1" 
             width="1" 
             style={{ display: 'none' }}
-            src={`https://www.facebook.com/tr?id=2131985867237144&ev=PageView&noscript=1`}
+            src="https://www.facebook.com/tr?id=2131985867237144&ev=PageView&noscript=1"
             alt=""
           />
         </noscript>

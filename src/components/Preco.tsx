@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { DocumentTextIcon, RocketLaunchIcon, GiftIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
 import { trackEvent } from '@/services/analytics';
+import { useEffect } from 'react';
 
 const beneficios = [
   {
@@ -21,6 +22,10 @@ const beneficios = [
 ];
 
 export default function Preco() {
+  useEffect(() => {
+    trackEvent.viewContent();
+  }, []);
+
   return (
     <section className="w-full py-24 bg-[#FDF8F9]">
       <div className="max-w-[1200px] mx-auto px-4">
