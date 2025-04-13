@@ -8,11 +8,21 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "PlumaDocs | Documentos Psicológicos Profissionais",
-  description: "Crie documentos psicológicos profissionais em minutos. Modelos prontos e atualizados seguindo as normas do CFP.",
-  keywords: "documentos psicológicos, laudos, relatórios, prontuários, CFP, psicologia",
+  description: "Crie documentos psicológicos profissionais em minutos. Modelos prontos e atualizados seguindo as normas do CFP. Laudos, relatórios e declarações com qualidade e segurança.",
+  keywords: "documentos psicológicos, laudos psicológicos, relatórios psicológicos, prontuários, CFP, psicologia, modelos de documentos, documentação psicológica",
+  authors: [{ name: "Pluma" }],
+  creator: "Pluma",
+  publisher: "Pluma",
+  formatDetection: {
+    email: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "https://docs.sejapluma.com",
+  },
   openGraph: {
     title: "PlumaDocs | Documentos Psicológicos Profissionais",
-    description: "Crie documentos psicológicos profissionais em minutos. Modelos prontos e atualizados seguindo as normas do CFP.",
+    description: "Crie documentos psicológicos profissionais em minutos. Modelos prontos e atualizados seguindo as normas do CFP. Laudos, relatórios e declarações com qualidade e segurança.",
     url: "https://docs.sejapluma.com",
     siteName: "PlumaDocs",
     images: [
@@ -29,12 +39,24 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "PlumaDocs | Documentos Psicológicos Profissionais",
-    description: "Crie documentos psicológicos profissionais em minutos. Modelos prontos e atualizados seguindo as normas do CFP.",
+    description: "Crie documentos psicológicos profissionais em minutos. Modelos prontos e atualizados seguindo as normas do CFP. Laudos, relatórios e declarações com qualidade e segurança.",
     images: ["/og-image.jpg"],
+    creator: "@sejapluma",
+    site: "@sejapluma",
   },
   robots: {
     index: true,
-    follow: true
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: "adicione_seu_codigo_do_google_search_console",
   },
   metadataBase: new URL("https://docs.sejapluma.com")
 };
