@@ -19,11 +19,17 @@ interface DataLayerEvent {
   };
 }
 
+interface GtagFunction {
+  (command: 'js', date: Date): void;
+  (command: 'config', targetId: string, config?: Record<string, unknown>): void;
+  (command: 'event', action: string, params?: Record<string, unknown>): void;
+}
+
 declare global {
   interface Window {
     fbq: FacebookPixel;
     dataLayer: DataLayerEvent[];
-    gtag: (...args: any[]) => void;
+    gtag: GtagFunction;
   }
 }
 
