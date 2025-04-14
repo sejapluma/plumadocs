@@ -26,14 +26,6 @@ export default function Preco() {
     trackEvent.viewContent();
   }, []);
 
-  const handlePurchase = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const url = e.currentTarget.href;
-    trackEvent.beginCheckout();
-    // @ts-ignore - função global do Google Ads
-    window.gtag_report_conversion(url);
-  };
-
   return (
     <section className="w-full py-24 bg-[#FDF8F9]">
       <div className="max-w-[1200px] mx-auto px-4">
@@ -105,10 +97,10 @@ export default function Preco() {
                 href="https://payment.ticto.app/O17F77F98"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={handlePurchase}
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-[#C4A484] rounded-lg hover:bg-[#B39373] transition-colors"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                onClick={() => trackEvent.beginCheckout()}
+                className="bg-[#C4A484] text-white px-8 py-4 rounded-lg font-medium text-lg hover:bg-[#B39474] transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Comprar agora
               </motion.a>

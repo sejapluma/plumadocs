@@ -69,6 +69,20 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <head>
+        {/* Google Ads */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17002733860"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17002733860');
+          `}
+        </Script>
+
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
@@ -77,34 +91,6 @@ export default function RootLayout({
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-MMZL4HQN');
-          `}
-        </Script>
-
-        {/* Google Ads */}
-        <Script id="google-ads" strategy="afterInteractive">
-          {`
-            gtag('config', 'AW-17002733860');
-          `}
-        </Script>
-
-        {/* Google Ads Conversion Function */}
-        <Script id="google-ads-conversion" strategy="afterInteractive">
-          {`
-            function gtag_report_conversion(url) {
-              var callback = function () {
-                if (typeof(url) != 'undefined') {
-                  window.location = url;
-                }
-              };
-              gtag('event', 'conversion', {
-                'send_to': 'AW-17002733860/mDRRCMbM6LcaEKTCxKs_',
-                'value': 37.00,
-                'currency': 'BRL',
-                'transaction_id': '',
-                'event_callback': callback
-              });
-              return false;
-            }
           `}
         </Script>
 

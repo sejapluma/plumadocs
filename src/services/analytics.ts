@@ -23,6 +23,7 @@ declare global {
   interface Window {
     fbq: FacebookPixel;
     dataLayer: DataLayerEvent[];
+    gtag: (...args: any[]) => void;
   }
 }
 
@@ -34,6 +35,7 @@ export const trackEvent = {
         window.dataLayer?.push({
           event: 'page_view'
         });
+        window.gtag?.('event', 'page_view');
       } catch (error) {
         console.error('Erro ao rastrear PageView:', error);
       }
@@ -47,6 +49,7 @@ export const trackEvent = {
         window.dataLayer?.push({
           event: 'contact'
         });
+        window.gtag?.('event', 'generate_lead');
       } catch (error) {
         console.error('Erro ao rastrear Contact:', error);
       }
@@ -76,6 +79,16 @@ export const trackEvent = {
             }]
           }
         });
+        window.gtag?.('event', 'begin_checkout', {
+          currency: 'BRL',
+          value: 37.00,
+          items: [{
+            item_name: 'Pacote de Documentos Psicológicos',
+            item_category: 'Documentos',
+            price: 37.00,
+            quantity: 1
+          }]
+        });
       } catch (error) {
         console.error('Erro ao rastrear InitiateCheckout:', error);
       }
@@ -91,6 +104,16 @@ export const trackEvent = {
           content_category: 'Documentos',
           currency: 'BRL',
           value: 37.00
+        });
+        window.gtag?.('event', 'view_item', {
+          currency: 'BRL',
+          value: 37.00,
+          items: [{
+            item_name: 'Pacote de Documentos Psicológicos',
+            item_category: 'Documentos',
+            price: 37.00,
+            quantity: 1
+          }]
         });
       } catch (error) {
         console.error('Erro ao rastrear ViewContent:', error);
