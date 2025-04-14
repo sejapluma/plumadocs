@@ -80,6 +80,34 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Google Ads */}
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            gtag('config', 'AW-17002733860');
+          `}
+        </Script>
+
+        {/* Google Ads Conversion Function */}
+        <Script id="google-ads-conversion" strategy="afterInteractive">
+          {`
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                'send_to': 'AW-17002733860/mDRRCMbM6LcaEKTCxKs_',
+                'value': 37.00,
+                'currency': 'BRL',
+                'transaction_id': '',
+                'event_callback': callback
+              });
+              return false;
+            }
+          `}
+        </Script>
+
         {/* Meta Pixel Code */}
         <Script id="meta-pixel" strategy="afterInteractive">
           {`
