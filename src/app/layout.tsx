@@ -83,6 +83,27 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Google Ads Conversion Tracking */}
+        <Script id="google-ads-conversion" strategy="afterInteractive">
+          {`
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                  'send_to': 'AW-17002733860/mDRRCMbM6LcaEKTCxKs_',
+                  'value': 1.0,
+                  'currency': 'BRL',
+                  'transaction_id': '',
+                  'event_callback': callback
+              });
+              return false;
+            }
+          `}
+        </Script>
+
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`

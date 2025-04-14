@@ -25,11 +25,16 @@ interface GtagFunction {
   (command: 'event', action: string, params?: Record<string, unknown>): void;
 }
 
+interface ConversionCallback {
+  (): void;
+}
+
 declare global {
   interface Window {
     fbq: FacebookPixel;
     dataLayer: DataLayerEvent[];
     gtag: GtagFunction;
+    gtag_report_conversion: (url?: string) => boolean;
   }
 }
 
@@ -123,6 +128,16 @@ export const trackEvent = {
         });
       } catch (error) {
         console.error('Erro ao rastrear ViewContent:', error);
+      }
+    }
+  },
+
+  conversion: (url?: string) => {
+    if (typeof window !== 'undefined') {
+      try {
+        window.gtag_report_conversion?.(url);
+      } catch (error) {
+        console.error('Erro ao rastrear Conversion:', error);
       }
     }
   }
