@@ -25,10 +25,6 @@ interface GtagFunction {
   (command: 'event', action: string, params?: Record<string, unknown>): void;
 }
 
-interface ConversionCallback {
-  (): void;
-}
-
 declare global {
   interface Window {
     fbq: FacebookPixel;

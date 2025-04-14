@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { DocumentTextIcon, RocketLaunchIcon, GiftIcon } from '@heroicons/react/24/outline';
-import Image from 'next/image';
 import { trackEvent } from '@/services/analytics';
 import { useEffect } from 'react';
 
