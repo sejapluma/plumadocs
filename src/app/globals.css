@@ -102,9 +102,17 @@ body {
 /* Imagens responsivas */
 .mobile-optimized img,
 .mobile-optimized .image-container {
-  @apply rounded-xl overflow-hidden;
-  max-height: 70vh;
-  object-fit: cover;
+  @apply rounded-xl overflow-hidden w-full;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+.mobile-optimized .hero-section img {
+  @apply w-full h-auto max-w-full;
+  max-height: 90vh;
+  object-fit: contain;
+  padding: 0;
+  margin: 0;
 }
 
 /* Grids e listas */
