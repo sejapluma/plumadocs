@@ -48,119 +48,76 @@ body {
 /* Estilos específicos para versão mobile */
 .mobile-optimized {
   @apply max-w-screen-sm mx-auto overflow-x-hidden bg-white;
-  min-height: 100vh;
-}
-
-/* Navegação mobile */
-.nav-mobile {
-  @apply fixed top-0 left-0 right-0 z-50 
-         flex justify-between items-center
-         px-5 py-3 bg-white/95 backdrop-blur-md
-         border-b border-[#F5F0EB];
-}
-
-.nav-button {
-  @apply bg-[#C4A484] text-white 
-         px-5 py-2.5 rounded-full text-sm font-medium
-         shadow-sm;
-}
-
-/* Seções mobile */
-.mobile-sections {
-  @apply pt-16 pb-24;
 }
 
 /* Tipografia otimizada para mobile */
 .mobile-optimized h1 {
-  @apply text-[2rem] font-bold leading-tight mb-6 tracking-tight;
+  @apply text-3xl font-bold leading-tight mb-4;
+  font-size: clamp(1.875rem, 5vw, 2.25rem);
 }
 
 .mobile-optimized h2 {
-  @apply text-[1.75rem] font-semibold leading-snug mb-4;
+  @apply text-2xl font-semibold leading-snug mb-3;
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
 }
 
 .mobile-optimized h3 {
-  @apply text-[1.25rem] font-medium leading-snug mb-3;
+  @apply text-xl font-medium leading-snug mb-2;
+  font-size: clamp(1.25rem, 3.5vw, 1.5rem);
 }
 
 .mobile-optimized p {
-  @apply text-[1rem] leading-relaxed mb-5 text-gray-700;
+  @apply text-base leading-relaxed mb-4;
+  font-size: clamp(1rem, 3vw, 1.125rem);
 }
 
 /* Layout e espaçamento */
 .mobile-optimized .container {
-  @apply px-5 mx-auto;
+  @apply px-4 mx-auto bg-white;
+  max-width: min(100%, 640px);
 }
 
 .mobile-optimized section {
-  @apply py-14 space-y-8;
+  @apply py-12 space-y-8 bg-white;
+}
+
+/* Elementos interativos */
+.mobile-optimized button,
+.mobile-optimized a.button {
+  @apply text-center py-4 px-6 rounded-xl font-medium 
+         active:scale-95 transition-all duration-200
+         touch-manipulation;
+  min-height: 48px;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 /* Cards e containers */
 .mobile-optimized .card {
-  @apply bg-white rounded-2xl p-6
+  @apply bg-white rounded-2xl p-6 shadow-sm
          border border-[#F5F0EB]
-         shadow-sm space-y-4;
-}
-
-/* Seções específicas */
-.mobile-optimized .hero-section {
-  @apply pt-20 pb-16 text-center space-y-6 bg-white px-5;
-}
-
-.mobile-optimized .dores-section {
-  @apply py-16 space-y-8 bg-[#F5F0EB] px-5;
-}
-
-.mobile-optimized .dores-section .card {
-  @apply p-6 bg-white text-center;
-}
-
-.mobile-optimized .beneficios-section {
-  @apply py-16 space-y-8 bg-white px-5;
-}
-
-.mobile-optimized .beneficios-section .card {
-  @apply p-6 space-y-4;
-}
-
-.mobile-optimized .preco-section {
-  @apply py-16 space-y-6 bg-[#F5F0EB] px-5;
-}
-
-.mobile-optimized .preco-section .card {
-  @apply p-7 space-y-5 bg-white;
-}
-
-.mobile-optimized .sobre-section {
-  @apply py-16 space-y-8 text-center bg-white px-5;
-}
-
-.mobile-optimized .footer {
-  @apply py-12 space-y-6 text-center bg-[#F5F0EB] px-5;
-}
-
-/* Botão flutuante */
-.floating-button {
-  @apply fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50
-         bg-[#C4A484] text-white
-         rounded-full shadow-lg;
-}
-
-.floating-button-link {
-  @apply flex items-center gap-3 px-6 py-4 font-medium;
+         space-y-4;
 }
 
 /* Imagens responsivas */
-.mobile-optimized img {
-  @apply rounded-xl w-full h-auto object-cover;
-  max-height: 60vh;
+.mobile-optimized img,
+.mobile-optimized .image-container {
+  @apply rounded-xl overflow-hidden;
+  max-height: 70vh;
+  object-fit: cover;
 }
 
 /* Grids e listas */
 .mobile-optimized .grid-container {
   @apply grid gap-6;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Navegação e menus */
+.mobile-optimized nav {
+  @apply sticky top-0 z-50 bg-white
+         border-b border-[#F5F0EB]
+         py-3;
 }
 
 /* Animações suaves */
@@ -175,6 +132,61 @@ body {
 
 .mobile-optimized :active {
   @apply outline-none;
+}
+
+/* Seções específicas */
+.mobile-optimized .hero-section {
+  @apply pt-16 pb-12 text-center space-y-6 bg-white;
+}
+
+.mobile-optimized .dores-section {
+  @apply py-12 space-y-8 bg-[#F5F0EB];
+}
+
+.mobile-optimized .dores-section .card {
+  @apply flex flex-col items-center text-center p-6 bg-white;
+}
+
+.mobile-optimized .beneficios-section {
+  @apply py-12 space-y-8 bg-white;
+}
+
+.mobile-optimized .beneficios-section .card {
+  @apply flex flex-col gap-4 p-6;
+}
+
+.mobile-optimized .preco-section {
+  @apply py-12 space-y-6 bg-[#F5F0EB];
+}
+
+.mobile-optimized .preco-section .card {
+  @apply p-6 space-y-4 bg-white;
+}
+
+.mobile-optimized .sobre-section {
+  @apply py-12 space-y-8 text-center bg-white;
+}
+
+.mobile-optimized .footer {
+  @apply py-8 space-y-6 text-center bg-[#F5F0EB];
+}
+
+/* Botão flutuante */
+.mobile-optimized .floating-button {
+  @apply fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50
+         bg-[#C4A484] text-white shadow-lg
+         rounded-full px-8 py-4;
+}
+
+/* Melhorias de scroll */
+.mobile-optimized {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Otimizações de performance */
+.mobile-optimized * {
+  @apply transform-gpu;
 }
 
 /* Dark mode suporte */
