@@ -1,17 +1,29 @@
-import HeroMobile from '@/components/mobile/Hero';
-import { Metadata } from 'next';
+'use client';
 
-export const metadata: Metadata = {
-  title: "PlumaDocs Mobile | Documentos Psicológicos",
-  description: "Versão mobile otimizada para criar documentos psicológicos profissionais em minutos. Modelos prontos e atualizados seguindo as normas do CFP.",
-  keywords: "documentos psicológicos, laudos psicológicos, relatórios psicológicos, prontuários, CFP, psicologia, modelos de documentos, documentação psicológica, mobile",
-};
+import { useEffect } from 'react';
+import { redirectToMobileVersion } from '@/utils/deviceDetection';
+import Hero from '@/components/Hero';
+import Dores from '@/components/Dores';
+import Beneficios from '@/components/Beneficios';
+import Preco from '@/components/Preco';
+import Sobre from '@/components/Sobre';
+import Footer from '@/components/Footer';
 
-export default function MobileHome() {
+export default function MobilePage() {
+  useEffect(() => {
+    redirectToMobileVersion();
+  }, []);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
-      <HeroMobile />
-      {/* Adicione aqui os outros componentes mobile */}
+    <main className="min-h-screen bg-white">
+      <div className="mobile-optimized">
+        <Hero />
+        <Dores />
+        <Beneficios />
+        <Preco />
+        <Sobre />
+        <Footer />
+      </div>
     </main>
   );
 } 

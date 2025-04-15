@@ -42,3 +42,56 @@ body {
 .text-balance {
   text-wrap: balance;
 }
+
+.mobile-optimized {
+  @apply max-w-screen-sm mx-auto;
+}
+
+.mobile-optimized h1 {
+  @apply text-3xl;
+}
+
+.mobile-optimized h2 {
+  @apply text-2xl;
+}
+
+.mobile-optimized p {
+  @apply text-base;
+}
+
+.mobile-optimized .container {
+  @apply px-4;
+}
+
+.mobile-optimized button,
+.mobile-optimized a {
+  @apply text-base py-3 px-6;
+}
+
+/* Ajustes específicos para componentes na versão mobile */
+.mobile-optimized .hero-section {
+  @apply py-12;
+}
+
+.mobile-optimized .dores-section {
+  @apply py-12 space-y-6;
+}
+
+.mobile-optimized .beneficios-section {
+  @apply py-12;
+}
+
+.mobile-optimized .preco-section {
+  @apply py-12;
+}
+
+.mobile-optimized .sobre-section {
+  @apply py-12;
+}
+
+/* Melhorias de touch para dispositivos móveis */
+.mobile-optimized button,
+.mobile-optimized a {
+  @apply touch-manipulation;
+  min-height: 44px; /* Tamanho mínimo recomendado para alvos touch */
+}

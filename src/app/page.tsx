@@ -1,3 +1,7 @@
+'use client';
+
+import { useEffect } from 'react';
+import { redirectToMobileVersion } from '@/utils/deviceDetection';
 import Hero from '@/components/Hero';
 import Banner from '@/components/Banner';
 import Inseguranca from '@/components/Inseguranca';
@@ -13,8 +17,12 @@ import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 
 export default function Home() {
+  useEffect(() => {
+    redirectToMobileVersion();
+  }, []);
+
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       <Hero />
       <Inseguranca />
       <Dores />
