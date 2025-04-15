@@ -2,19 +2,12 @@
 
 import { useEffect } from 'react';
 import { redirectToMobileVersion } from '@/utils/deviceDetection';
-import { motion } from 'framer-motion';
 import Hero from '@/components/Hero';
 import Dores from '@/components/Dores';
 import Beneficios from '@/components/Beneficios';
 import Preco from '@/components/Preco';
 import Sobre from '@/components/Sobre';
 import Footer from '@/components/Footer';
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-};
 
 export default function MobilePage() {
   useEffect(() => {
@@ -24,42 +17,31 @@ export default function MobilePage() {
   return (
     <main className="min-h-screen bg-white">
       <div className="mobile-optimized">
-        {/* Seções principais */}
-        <motion.div
-          initial="initial"
-          animate="animate"
-          variants={{
-            animate: {
-              transition: {
-                staggerChildren: 0.1
-              }
-            }
-          }}
-        >
-          <motion.section className="hero-section" variants={fadeInUp}>
+        <div>
+          <section className="hero-section">
             <Hero />
-          </motion.section>
+          </section>
 
-          <motion.section className="dores-section" variants={fadeInUp}>
+          <section className="dores-section">
             <Dores />
-          </motion.section>
+          </section>
 
-          <motion.section className="beneficios-section" variants={fadeInUp}>
+          <section className="beneficios-section">
             <Beneficios />
-          </motion.section>
+          </section>
 
-          <motion.section className="preco-section" variants={fadeInUp}>
+          <section className="preco-section">
             <Preco />
-          </motion.section>
+          </section>
 
-          <motion.section className="sobre-section" variants={fadeInUp}>
+          <section className="sobre-section">
             <Sobre />
-          </motion.section>
+          </section>
 
-          <motion.footer className="footer" variants={fadeInUp}>
+          <footer className="footer">
             <Footer />
-          </motion.footer>
-        </motion.div>
+          </footer>
+        </div>
       </div>
     </main>
   );
