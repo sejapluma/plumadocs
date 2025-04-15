@@ -2,12 +2,6 @@
 
 import { useEffect } from 'react';
 import { redirectToMobileVersion } from '@/utils/deviceDetection';
-import Hero from '@/components/Hero';
-import Dores from '@/components/Dores';
-import Beneficios from '@/components/Beneficios';
-import Preco from '@/components/Preco';
-import Sobre from '@/components/Sobre';
-import Footer from '@/components/Footer';
 import Image from 'next/image'
 import Link from 'next/link'
 
