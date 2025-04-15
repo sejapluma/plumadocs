@@ -5,6 +5,14 @@ import { redirectToMobileVersion } from '@/utils/deviceDetection';
 import Image from 'next/image'
 import Link from 'next/link'
 
+declare global {
+  interface Window {
+    trackEvent?: {
+      beginCheckout: () => void;
+    }
+  }
+}
+
 export default function MobilePage() {
   useEffect(() => {
     redirectToMobileVersion();
