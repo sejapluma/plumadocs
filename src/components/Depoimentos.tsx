@@ -1,73 +1,56 @@
 'use client';
 
+import { motion } from 'framer-motion';
+import { StarIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 
 export default function Depoimentos() {
-  const depoimentos = [
-    {
-      nome: 'Ana Clara',
-      cargo: 'Psicóloga Clínica',
-      texto: 'Os modelos são incríveis! Me ajudaram muito a manter minha documentação organizada e profissional.',
-      foto: '/ana.jpg'
-    },
-    {
-      nome: 'Pedro Santos',
-      cargo: 'Psicólogo Organizacional',
-      texto: 'Excelente material. Economizei muito tempo e agora tenho mais segurança na elaboração dos documentos.',
-      foto: '/pedro.jpg'
-    },
-    {
-      nome: 'Maria Luiza',
-      cargo: 'Psicóloga Recém-formada',
-      texto: 'Perfeito para quem está começando! Os exemplos práticos me ajudaram muito a entender como fazer.',
-      foto: '/maria.jpg'
-    }
-  ];
-
   return (
-    <section className="w-full py-24 bg-[#FAFAFA]">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-[#C4A484] mb-4">
-            O que dizem sobre a Pluma
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Veja a experiência de quem já está usando nossos modelos
-          </p>
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {depoimentos.map((depoimento, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-lg shadow-sm"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 relative rounded-full overflow-hidden">
-                    <Image
-                      src={depoimento.foto}
-                      alt={depoimento.nome}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-[#C4A484]">
-                      {depoimento.nome}
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      {depoimento.cargo}
-                    </p>
-                  </div>
-                </div>
-                <p className="text-gray-600">
-                  {depoimento.texto}
-                </p>
+    <section className="w-full py-24 bg-[#FDF8F9]">
+      <div className="max-w-[900px] mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-3xl p-8 md:p-12 shadow-lg"
+        >
+          <div className="flex flex-col items-center text-center">
+            {/* Foto e Nome */}
+            <div className="mb-8 flex flex-col items-center">
+              <div className="w-32 h-32 rounded-full overflow-hidden relative mb-6 flex items-center justify-center">
+                <Image
+                  src="/dra-tatiane.jpg"
+                  alt="Dra. Tatiane"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 128px) 100vw, 128px"
+                />
               </div>
-            ))}
+              <h3 className="text-4xl font-medium text-black">
+                Dra. Tatiane
+              </h3>
+            </div>
+
+            {/* Estrelas */}
+            <div className="flex gap-2 mb-8">
+              {[...Array(5)].map((_, i) => (
+                <StarIcon key={i} className="w-8 h-8 text-[#C4A484]" />
+              ))}
+            </div>
+
+            {/* Depoimento */}
+            <p className="text-xl md:text-2xl text-black leading-relaxed max-w-3xl">
+              Sou psicóloga clínica há mais de 10 anos e sempre senti a sobrecarga da 
+              documentação. Elaborar relatórios, laudos, prontuários manualmente, tudo do zero, 
+              consumia um tempo precioso que eu poderia dedicar aos meus pacientes ou aos 
+              meus estudos. Desde que comecei a usar Pluma Docs, me apaixonei! Os modelos são 
+              incríveis: completos, seguindo as normas do CFP (o que me dá uma segurança enorme!) 
+              e ainda posso personalizar com as cores e a identidade da minha clínica.
+            </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

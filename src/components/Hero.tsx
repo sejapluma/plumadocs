@@ -1,44 +1,71 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="w-full min-h-screen bg-[#FAFAFA] flex items-center">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-[#C4A484]">Documentação</span> psicológica simplificada
-            </h1>
-            <p className="text-xl text-gray-600 mb-8">
-              Modelos prontos e atualizados para você focar no que realmente importa: seus pacientes.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#"
-                className="inline-block bg-[#C4A484] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#B39373] transition-colors text-center"
-              >
-                Começar agora
-              </a>
-              <a
-                href="#"
-                className="inline-block border-2 border-[#C4A484] text-[#C4A484] px-8 py-4 rounded-lg font-semibold hover:bg-[#C4A484] hover:text-white transition-colors text-center"
-              >
-                Saiba mais
-              </a>
-            </div>
-          </div>
-          <div className="relative aspect-square">
-            <Image
-              src="/hero.jpg"
-              alt="Documentação psicológica"
-              fill
-              className="object-cover rounded-lg"
-              priority
-            />
-          </div>
+    <section className="min-h-screen flex flex-col items-center justify-start px-4 py-16 bg-white text-black">
+      {/* Logo */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="mb-12"
+      >
+        <div className="relative w-[200px] h-[50px]">
+          <Image
+            src="/logo-plumadocs.png"
+            alt="PlumaDocs"
+            fill
+            style={{ objectFit: 'contain' }}
+            priority
+          />
         </div>
+      </motion.div>
+
+      {/* Main Content */}
+      <div className="max-w-[1400px] mx-auto w-full text-center">
+        {/* Main Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
+        >
+          <span className="text-black">Crie Documentos Psicológicos</span><br />
+          <span className="text-black">Oficiais em Minutos</span>
+        </motion.h1>
+
+        {/* Subheading */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-xl md:text-2xl mb-16"
+        >
+          Mais tempo, segurança e tranquilidade na sua rotina
+        </motion.p>
+
+        {/* Product Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="relative w-full aspect-[2] mb-16 mx-auto max-w-[1200px]"
+        >
+          <Image
+            src="/a4-mockup.png"
+            alt="Documentos profissionais do Pluma Docs"
+            fill
+            style={{ 
+              objectFit: 'contain',
+              transform: 'scale(1.2)',
+              objectPosition: 'center 45%'
+            }}
+            priority
+          />
+        </motion.div>
       </div>
     </section>
   );
