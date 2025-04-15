@@ -55,41 +55,41 @@ export default function MobilePage() {
             }
           }}
         >
-          <motion.section variants={fadeInUp}>
+          <motion.section className="hero-section" variants={fadeInUp}>
             <Hero />
           </motion.section>
 
-          <motion.section variants={fadeInUp}>
+          <motion.section className="dores-section" variants={fadeInUp}>
             <Dores />
           </motion.section>
 
-          <motion.section variants={fadeInUp}>
+          <motion.section className="beneficios-section" variants={fadeInUp}>
             <Beneficios />
           </motion.section>
 
-          <motion.section variants={fadeInUp}>
+          <motion.section className="preco-section" variants={fadeInUp}>
             <Preco />
           </motion.section>
 
-          <motion.section variants={fadeInUp}>
+          <motion.section className="sobre-section" variants={fadeInUp}>
             <Sobre />
           </motion.section>
 
-          <motion.footer variants={fadeInUp}>
+          <motion.footer className="footer" variants={fadeInUp}>
             <Footer />
           </motion.footer>
         </motion.div>
 
         {/* Botão flutuante de compra */}
         <motion.div
-          className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50"
+          className="floating-button"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
         >
           <a
             href="https://payment.ticto.app/O17F77F98"
-            className="button bg-[#C4A484] text-white px-8 py-4 rounded-full shadow-lg flex items-center gap-2"
+            className="flex items-center gap-2"
           >
             <span>Comprar por R$37,00</span>
             <svg

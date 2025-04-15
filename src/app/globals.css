@@ -6,6 +6,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #C4A484;
+  --primary-light: #F5F0EB;
 }
 
 @theme inline {
@@ -45,7 +47,7 @@ body {
 
 /* Estilos específicos para versão mobile */
 .mobile-optimized {
-  @apply max-w-screen-sm mx-auto overflow-x-hidden;
+  @apply max-w-screen-sm mx-auto overflow-x-hidden bg-white;
 }
 
 /* Tipografia otimizada para mobile */
@@ -71,29 +73,29 @@ body {
 
 /* Layout e espaçamento */
 .mobile-optimized .container {
-  @apply px-4 mx-auto;
+  @apply px-4 mx-auto bg-white;
   max-width: min(100%, 640px);
 }
 
 .mobile-optimized section {
-  @apply py-12 space-y-8;
+  @apply py-12 space-y-8 bg-white;
 }
 
 /* Elementos interativos */
 .mobile-optimized button,
 .mobile-optimized a.button {
-  @apply w-full text-center py-4 px-6 rounded-xl font-medium 
+  @apply text-center py-4 px-6 rounded-xl font-medium 
          active:scale-95 transition-all duration-200
          touch-manipulation;
-  min-height: 48px; /* Tamanho mínimo para alvos touch */
-  max-width: 320px; /* Largura máxima para botões */
+  min-height: 48px;
+  max-width: 320px;
   margin: 0 auto;
 }
 
 /* Cards e containers */
 .mobile-optimized .card {
-  @apply bg-white rounded-2xl p-6 shadow-md
-         border border-gray-100
+  @apply bg-white rounded-2xl p-6 shadow-sm
+         border border-[#F5F0EB]
          space-y-4;
 }
 
@@ -113,8 +115,8 @@ body {
 
 /* Navegação e menus */
 .mobile-optimized nav {
-  @apply sticky top-0 z-50 bg-white/80 backdrop-blur-md
-         border-b border-gray-100
+  @apply sticky top-0 z-50 bg-white
+         border-b border-[#F5F0EB]
          py-3;
 }
 
@@ -132,21 +134,21 @@ body {
   @apply outline-none;
 }
 
-/* Ajustes específicos para componentes */
+/* Seções específicas */
 .mobile-optimized .hero-section {
-  @apply pt-16 pb-12 text-center space-y-6;
+  @apply pt-16 pb-12 text-center space-y-6 bg-white;
 }
 
 .mobile-optimized .dores-section {
-  @apply py-12 space-y-8;
+  @apply py-12 space-y-8 bg-[#F5F0EB];
 }
 
 .mobile-optimized .dores-section .card {
-  @apply flex flex-col items-center text-center p-6;
+  @apply flex flex-col items-center text-center p-6 bg-white;
 }
 
 .mobile-optimized .beneficios-section {
-  @apply py-12 space-y-8;
+  @apply py-12 space-y-8 bg-white;
 }
 
 .mobile-optimized .beneficios-section .card {
@@ -154,30 +156,37 @@ body {
 }
 
 .mobile-optimized .preco-section {
-  @apply py-12 space-y-6;
+  @apply py-12 space-y-6 bg-[#F5F0EB];
 }
 
 .mobile-optimized .preco-section .card {
-  @apply p-6 space-y-4;
+  @apply p-6 space-y-4 bg-white;
 }
 
 .mobile-optimized .sobre-section {
-  @apply py-12 space-y-8 text-center;
+  @apply py-12 space-y-8 text-center bg-white;
 }
 
 .mobile-optimized .footer {
-  @apply py-8 space-y-6 text-center;
+  @apply py-8 space-y-6 text-center bg-[#F5F0EB];
 }
 
-/* Otimizações de performance */
-.mobile-optimized * {
-  @apply transform-gpu; /* Usa aceleração de GPU */
+/* Botão flutuante */
+.mobile-optimized .floating-button {
+  @apply fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50
+         bg-[#C4A484] text-white shadow-lg
+         rounded-full px-8 py-4;
 }
 
 /* Melhorias de scroll */
 .mobile-optimized {
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+}
+
+/* Otimizações de performance */
+.mobile-optimized * {
+  @apply transform-gpu;
 }
 
 /* Dark mode suporte */
