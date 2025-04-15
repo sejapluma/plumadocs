@@ -43,55 +43,154 @@ body {
   text-wrap: balance;
 }
 
+/* Estilos específicos para versão mobile */
 .mobile-optimized {
-  @apply max-w-screen-sm mx-auto;
+  @apply max-w-screen-sm mx-auto overflow-x-hidden;
 }
 
+/* Tipografia otimizada para mobile */
 .mobile-optimized h1 {
-  @apply text-3xl;
+  @apply text-3xl font-bold leading-tight mb-4;
+  font-size: clamp(1.875rem, 5vw, 2.25rem);
 }
 
 .mobile-optimized h2 {
-  @apply text-2xl;
+  @apply text-2xl font-semibold leading-snug mb-3;
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
+}
+
+.mobile-optimized h3 {
+  @apply text-xl font-medium leading-snug mb-2;
+  font-size: clamp(1.25rem, 3.5vw, 1.5rem);
 }
 
 .mobile-optimized p {
-  @apply text-base;
+  @apply text-base leading-relaxed mb-4;
+  font-size: clamp(1rem, 3vw, 1.125rem);
 }
 
+/* Layout e espaçamento */
 .mobile-optimized .container {
-  @apply px-4;
+  @apply px-4 mx-auto;
+  max-width: min(100%, 640px);
 }
 
+.mobile-optimized section {
+  @apply py-12 space-y-8;
+}
+
+/* Elementos interativos */
 .mobile-optimized button,
-.mobile-optimized a {
-  @apply text-base py-3 px-6;
+.mobile-optimized a.button {
+  @apply w-full text-center py-4 px-6 rounded-xl font-medium 
+         active:scale-95 transition-all duration-200
+         touch-manipulation;
+  min-height: 48px; /* Tamanho mínimo para alvos touch */
+  max-width: 320px; /* Largura máxima para botões */
+  margin: 0 auto;
 }
 
-/* Ajustes específicos para componentes na versão mobile */
+/* Cards e containers */
+.mobile-optimized .card {
+  @apply bg-white rounded-2xl p-6 shadow-md
+         border border-gray-100
+         space-y-4;
+}
+
+/* Imagens responsivas */
+.mobile-optimized img,
+.mobile-optimized .image-container {
+  @apply rounded-xl overflow-hidden;
+  max-height: 70vh;
+  object-fit: cover;
+}
+
+/* Grids e listas */
+.mobile-optimized .grid-container {
+  @apply grid gap-6;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Navegação e menus */
+.mobile-optimized nav {
+  @apply sticky top-0 z-50 bg-white/80 backdrop-blur-md
+         border-b border-gray-100
+         py-3;
+}
+
+/* Animações suaves */
+.mobile-optimized .animate-fade {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Melhorias de acessibilidade */
+.mobile-optimized :focus {
+  @apply outline-2 outline-offset-2 outline-[#C4A484];
+}
+
+.mobile-optimized :active {
+  @apply outline-none;
+}
+
+/* Ajustes específicos para componentes */
 .mobile-optimized .hero-section {
-  @apply py-12;
+  @apply pt-16 pb-12 text-center space-y-6;
 }
 
 .mobile-optimized .dores-section {
-  @apply py-12 space-y-6;
+  @apply py-12 space-y-8;
+}
+
+.mobile-optimized .dores-section .card {
+  @apply flex flex-col items-center text-center p-6;
 }
 
 .mobile-optimized .beneficios-section {
-  @apply py-12;
+  @apply py-12 space-y-8;
+}
+
+.mobile-optimized .beneficios-section .card {
+  @apply flex flex-col gap-4 p-6;
 }
 
 .mobile-optimized .preco-section {
-  @apply py-12;
+  @apply py-12 space-y-6;
+}
+
+.mobile-optimized .preco-section .card {
+  @apply p-6 space-y-4;
 }
 
 .mobile-optimized .sobre-section {
-  @apply py-12;
+  @apply py-12 space-y-8 text-center;
 }
 
-/* Melhorias de touch para dispositivos móveis */
-.mobile-optimized button,
-.mobile-optimized a {
-  @apply touch-manipulation;
-  min-height: 44px; /* Tamanho mínimo recomendado para alvos touch */
+.mobile-optimized .footer {
+  @apply py-8 space-y-6 text-center;
+}
+
+/* Otimizações de performance */
+.mobile-optimized * {
+  @apply transform-gpu; /* Usa aceleração de GPU */
+}
+
+/* Melhorias de scroll */
+.mobile-optimized {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Dark mode suporte */
+@media (prefers-color-scheme: dark) {
+  .mobile-optimized {
+    @apply bg-gray-900 text-white;
+  }
+  
+  .mobile-optimized .card {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .mobile-optimized nav {
+    @apply bg-gray-900/80 border-gray-800;
+  }
 }
