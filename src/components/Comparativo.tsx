@@ -1,11 +1,8 @@
 'use client';
 
-import { useIsMobile } from '@/hooks/useIsMobile';
 import { CheckIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 export default function Comparativo() {
-  const isMobile = useIsMobile();
-
   const comparacoes = [
     {
       semPluma: 'Horas perdidas criando documentos do zero',

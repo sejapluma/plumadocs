@@ -1,11 +1,8 @@
 'use client';
 
-import { useIsMobile } from '@/hooks/useIsMobile';
 import { UserGroupIcon, AcademicCapIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
 
 export default function ParaQuem() {
-  const isMobile = useIsMobile();
-
   const perfis = [
     {
       icon: UserGroupIcon,

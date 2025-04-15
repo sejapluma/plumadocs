@@ -1,11 +1,8 @@
 'use client';
 
-import { useIsMobile } from '@/hooks/useIsMobile';
 import Image from 'next/image';
 
 export default function Hero() {
-  const isMobile = useIsMobile();
-
   return (
     <section className="w-full min-h-screen bg-[#FAFAFA] flex items-center">
       <div className="container mx-auto px-4 py-12">

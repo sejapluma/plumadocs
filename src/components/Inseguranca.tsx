@@ -1,11 +1,8 @@
 'use client';
 
-import { useIsMobile } from '@/hooks/useIsMobile';
 import Image from 'next/image';
 
 export default function Inseguranca() {
-  const isMobile = useIsMobile();
-
   return (
     <section className="w-full py-24 bg-[#FAFAFA]">
       <div className="container mx-auto px-4">

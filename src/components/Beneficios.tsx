@@ -1,10 +1,6 @@
 'use client';
 
-import { useIsMobile } from '@/hooks/useIsMobile';
-
 export default function Beneficios() {
-  const isMobile = useIsMobile();
-
   const recursos = [
     {
       title: 'Facilidade',

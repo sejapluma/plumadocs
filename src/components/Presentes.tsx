@@ -1,10 +1,6 @@
 'use client';
 
-import { useIsMobile } from '@/hooks/useIsMobile';
-
 export default function Presentes() {
-  const isMobile = useIsMobile();
-
   const recursos = [
     {
       title: 'Tabela de pacientes',

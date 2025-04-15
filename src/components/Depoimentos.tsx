@@ -1,11 +1,8 @@
 'use client';
 
-import { useIsMobile } from '@/hooks/useIsMobile';
 import Image from 'next/image';
 
 export default function Depoimentos() {
-  const isMobile = useIsMobile();
-
   const depoimentos = [
     {
       nome: 'Ana Clara',
