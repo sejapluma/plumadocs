@@ -1,59 +1,64 @@
 'use client';
 
+import { useIsMobile } from '@/hooks/useIsMobile';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 export default function Inseguranca() {
-  return (
-    <section className="w-full py-24 bg-[#F8F8F8]">
-      <div className="max-w-[1400px] mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Texto à esquerda */}
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="space-y-6"
-        >
-          <h2 className="text-4xl md:text-5xl font-medium leading-tight">
-            <span className="text-black">Está trabalhando com </span>
-            <span className="text-[#C4A484]">Insegurança?</span>
-          </h2>
-          
-          <div className="space-y-6 text-lg text-gray-600">
-            <p>
-              O Pluma Docs oferece uma coleção de modelos práticos, atualizados e alinhados às normas do CFP. 
-              Com ele, você pode criar documentos impecáveis em poucos minutos, adaptando cada modelo ao seu 
-              estilo e às suas necessidades.
-            </p>
-            
-            <p>
-              Pare de arriscar com modelos que podem não seguir as normas{' '}
-              <strong className="text-black">CFP 06/2019 e CFP 04/2020.</strong>
-            </p>
-            
-            <p className="text-xl font-medium text-black">
-              Tenha a tranquilidade de trabalhar com segurança e certeza.
-            </p>
-          </div>
-        </motion.div>
+  const isMobile = useIsMobile();
 
-        {/* Imagem à direita */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative aspect-[4/3] w-full"
-        >
-          <Image
-            src="/a4_foco.png"
-            alt="Documento psicológico profissional"
-            fill
-            className="object-contain"
-            priority
-          />
-        </motion.div>
+  return (
+    <section className="w-full py-24 bg-[#FAFAFA]">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-[#C4A484] mb-4">
+            Chega de insegurança
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Tenha a certeza de que seus documentos estão corretos e seguindo todas as normas do CFP
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="relative aspect-square">
+              <Image
+                src="/inseguranca.jpg"
+                alt="Profissional inseguro com documentação"
+                fill
+                className="object-cover rounded-lg"
+              />
+            </div>
+
+            <div className="space-y-6">
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-xl font-semibold text-[#C4A484] mb-2">
+                  Documentos Validados
+                </h3>
+                <p className="text-gray-600">
+                  Todos os modelos foram revisados e estão de acordo com as normas do Conselho Federal de Psicologia.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-xl font-semibold text-[#C4A484] mb-2">
+                  Exemplos Práticos
+                </h3>
+                <p className="text-gray-600">
+                  Cada documento vem com um exemplo prático preenchido para você entender exatamente como usar.
+                </p>
+              </div>
+
+              <div className="bg-white p-6 rounded-lg shadow-sm">
+                <h3 className="text-xl font-semibold text-[#C4A484] mb-2">
+                  Suporte Contínuo
+                </h3>
+                <p className="text-gray-600">
+                  Atualizamos os modelos sempre que houver mudanças nas normas do CFP.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -30,8 +30,7 @@ const cards = [
 export default function Dores() {
   const isMobile = useIsMobile();
 
-  // Renderização do título
-  const TitleSection = isMobile ? (
+  const TitleSection = (
     <div className="text-center mb-16">
       <h2 className="text-4xl font-bold text-[#C4A484] mb-4">
         Você quer continuar passando por isso?
@@ -41,25 +40,8 @@ export default function Dores() {
         Transforme suas dores em produtividade.
       </p>
     </div>
-  ) : (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="text-center mb-16"
-    >
-      <h2 className="text-4xl font-bold text-[#C4A484] mb-4">
-        Você quer continuar passando por isso?
-      </h2>
-      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-        Documentação psicológica não precisa ser um pesadelo.
-        Transforme suas dores em produtividade.
-      </p>
-    </motion.div>
   );
 
-  // Renderização do card
   const Card = ({ card }: { card: typeof cards[0] }) => {
     if (isMobile) {
       return (

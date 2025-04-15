@@ -33,8 +33,7 @@ export default function Preco() {
     trackEvent.conversion('https://payment.ticto.app/O17F77F98');
   };
 
-  // Renderização do título
-  const TitleSection = isMobile ? (
+  const TitleSection = (
     <div className="text-center mb-16">
       <h2 className="text-4xl font-bold text-[#C4A484] mb-4">
         Invista no seu profissionalismo
@@ -43,25 +42,9 @@ export default function Preco() {
         Acesso imediato a todos os modelos e recursos. Sem mensalidade, pague uma única vez.
       </p>
     </div>
-  ) : (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="text-center mb-16"
-    >
-      <h2 className="text-4xl font-bold text-[#C4A484] mb-4">
-        Invista no seu profissionalismo
-      </h2>
-      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-        Acesso imediato a todos os modelos e recursos. Sem mensalidade, pague uma única vez.
-      </p>
-    </motion.div>
   );
 
-  // Renderização do botão
-  const PurchaseButton = isMobile ? (
+  const PurchaseButton = (
     <a
       href="https://payment.ticto.app/O17F77F98"
       onClick={handlePurchase}
@@ -69,19 +52,8 @@ export default function Preco() {
     >
       Comprar agora
     </a>
-  ) : (
-    <motion.a
-      href="https://payment.ticto.app/O17F77F98"
-      onClick={handlePurchase}
-      className="inline-block bg-[#C4A484] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#B39373] transition-colors"
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      Comprar agora
-    </motion.a>
   );
 
-  // Renderização do benefício
   const BeneficioItem = ({ beneficio }: { beneficio: typeof beneficios[0] }) => {
     if (isMobile) {
       return (
