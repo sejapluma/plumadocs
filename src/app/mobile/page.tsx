@@ -24,25 +24,6 @@ export default function MobilePage() {
   return (
     <main className="min-h-screen bg-white">
       <div className="mobile-optimized">
-        {/* Barra de navegação fixa */}
-        <nav className="flex justify-between items-center px-4">
-          <motion.img
-            src="/logo.png"
-            alt="PlumaDocs"
-            className="h-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          />
-          <motion.a
-            href="https://payment.ticto.app/O17F77F98"
-            className="button bg-[#C4A484] text-white px-4 py-2 rounded-lg text-sm"
-            whileTap={{ scale: 0.95 }}
-          >
-            Comprar agora
-          </motion.a>
-        </nav>
-
         {/* Seções principais */}
         <motion.div
           initial="initial"
