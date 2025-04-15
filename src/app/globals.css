@@ -103,16 +103,21 @@ body {
 .mobile-optimized img,
 .mobile-optimized .image-container {
   @apply rounded-xl overflow-hidden w-full;
-  max-height: 90vh;
+  max-height: 100vh;
   object-fit: contain;
 }
 
+.mobile-optimized .hero-section {
+  @apply pt-0 pb-0 m-0;
+}
+
 .mobile-optimized .hero-section img {
-  @apply w-full h-auto max-w-full;
-  max-height: 90vh;
+  @apply w-screen h-auto max-w-none;
+  max-height: 100vh;
   object-fit: contain;
   padding: 0;
   margin: 0;
+  transform: scale(1.5);
 }
 
 /* Grids e listas */
