@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { DocumentTextIcon, RocketLaunchIcon, GiftIcon } from '@heroicons/react/24/outline';
 import { trackEvent } from '@/services/analytics';
 import { useEffect } from 'react';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 const beneficios = [
   {
@@ -21,6 +22,8 @@ const beneficios = [
 ];
 
 export default function Preco() {
+  const isMobile = useIsMobile();
+
   useEffect(() => {
     trackEvent.viewContent();
   }, []);
@@ -30,14 +33,31 @@ export default function Preco() {
     trackEvent.conversion('https://payment.ticto.app/O17F77F98');
   };
 
+  // Configurações de animação condicionais
+  const containerAnimation = !isMobile ? {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.5 }
+  } : {};
+
+  const itemAnimation = !isMobile ? {
+    initial: { opacity: 0, x: -20 },
+    whileInView: { opacity: 1, x: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.5 }
+  } : {};
+
+  const buttonAnimation = !isMobile ? {
+    whileHover: { scale: 1.05 },
+    whileTap: { scale: 0.95 }
+  } : {};
+
   return (
     <section className="w-full py-24 bg-[#FDF8F9]">
       <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          {...containerAnimation}
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-[#C4A484] mb-4">Invista no seu profissionalismo</h2>
@@ -55,13 +75,10 @@ export default function Preco() {
                   {beneficios.map((beneficio, index) => (
                     <motion.li
                       key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      {...itemAnimation}
                       className="flex items-start gap-3"
                     >
-                      <DocumentTextIcon className="w-6 h-6 text-[#C4A484] flex-shrink-0 mt-1" />
+                      <beneficio.icon className="w-6 h-6 text-[#C4A484] flex-shrink-0 mt-1" />
                       <span className="text-gray-600">{beneficio.text}</span>
                     </motion.li>
                   ))}
@@ -77,8 +94,7 @@ export default function Preco() {
                   href="https://payment.ticto.app/O17F77F98"
                   onClick={handlePurchase}
                   className="inline-block bg-[#C4A484] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#B39373] transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  {...buttonAnimation}
                 >
                   Comprar agora
                 </motion.a>
