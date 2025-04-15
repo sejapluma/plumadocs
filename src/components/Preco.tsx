@@ -82,7 +82,7 @@ export default function Preco() {
   );
 
   // Renderização do benefício
-  const BeneficioItem = ({ beneficio, index }: { beneficio: typeof beneficios[0], index: number }) => {
+  const BeneficioItem = ({ beneficio }: { beneficio: typeof beneficios[0] }) => {
     if (isMobile) {
       return (
         <div className="flex items-start gap-3">
@@ -117,7 +117,7 @@ export default function Preco() {
                 <h3 className="text-2xl font-bold text-[#C4A484] mb-4">Pacote Completo</h3>
                 <ul className="space-y-4">
                   {beneficios.map((beneficio, index) => (
-                    <BeneficioItem key={index} beneficio={beneficio} index={index} />
+                    <BeneficioItem key={index} beneficio={beneficio} />
                   ))}
                 </ul>
               </div>

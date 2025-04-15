@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useIsMobile } from '@/hooks/useIsMobile';
+import Image from 'next/image';
 
 const cards = [
   {
@@ -59,15 +60,16 @@ export default function Dores() {
   );
 
   // Renderização do card
-  const Card = ({ card, index }: { card: typeof cards[0], index: number }) => {
+  const Card = ({ card }: { card: typeof cards[0] }) => {
     if (isMobile) {
       return (
         <div className="bg-white rounded-xl p-6 shadow-lg">
-          <div className="w-16 h-16 mx-auto mb-4">
-            <img
+          <div className="w-16 h-16 mx-auto mb-4 relative">
+            <Image
               src={card.image}
               alt={card.title}
-              className="w-full h-full object-contain"
+              fill
+              className="object-contain"
             />
           </div>
           <h3 className="text-xl font-semibold text-[#C4A484] mb-2 text-center">
@@ -88,11 +90,12 @@ export default function Dores() {
         transition={{ duration: 0.5 }}
         className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
       >
-        <div className="w-16 h-16 mx-auto mb-4">
-          <img
+        <div className="w-16 h-16 mx-auto mb-4 relative">
+          <Image
             src={card.image}
             alt={card.title}
-            className="w-full h-full object-contain"
+            fill
+            className="object-contain"
           />
         </div>
         <h3 className="text-xl font-semibold text-[#C4A484] mb-2 text-center">
@@ -111,7 +114,7 @@ export default function Dores() {
         {TitleSection}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {cards.map((card, index) => (
-            <Card key={index} card={card} index={index} />
+            <Card key={index} card={card} />
           ))}
         </div>
       </div>
