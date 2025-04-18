@@ -27,7 +27,7 @@ export default function Preco() {
 
   const handlePurchase = () => {
     trackEvent.beginCheckout();
-    trackEvent.conversion('https://payment.ticto.app/O17F77F98');
+    trackEvent.conversion('https://payment.ticto.app/O9487FD99');
   };
 
   return (
@@ -75,7 +75,7 @@ export default function Preco() {
                     <span className="text-5xl font-bold text-[#C4A484]">R$17,00</span>
                   </div>
                   <motion.a
-                    href="https://payment.ticto.app/O17F77F98"
+                    href="https://payment.ticto.app/O9487FD99"
                     className="bg-[#C4A484] text-white px-8 py-4 rounded-xl font-medium hover:scale-105 active:scale-95 transition-all duration-200"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
