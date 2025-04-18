@@ -69,19 +69,21 @@ export default function Preco() {
               </div>
 
               <div className="flex-1 text-center">
-                <div className="mb-6">
-                  <span className="text-4xl font-bold text-[#C4A484]">R$ 37,00</span>
-                  <span className="text-gray-500 block">pagamento único</span>
+                <div className="flex flex-col items-center justify-center gap-4">
+                  <div className="flex items-center gap-2">
+                    <span className="text-gray-500 line-through">R$37,00</span>
+                    <span className="text-2xl font-bold">R$17,00</span>
+                  </div>
+                  <motion.a
+                    href="https://payment.ticto.app/O17F77F98"
+                    className="bg-[#C4A484] text-white px-8 py-4 rounded-xl font-medium hover:scale-105 active:scale-95 transition-all duration-200"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={handlePurchase}
+                  >
+                    Comprar agora
+                  </motion.a>
                 </div>
-                <motion.a
-                  href="https://payment.ticto.app/O17F77F98"
-                  onClick={handlePurchase}
-                  className="inline-block bg-[#C4A484] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#B39373] transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Comprar agora
-                </motion.a>
                 <p className="text-sm text-gray-500 mt-4">
                   Acesso vitalício • Atualizações gratuitas • Suporte por email
                 </p>
