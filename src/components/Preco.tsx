@@ -70,9 +70,9 @@ export default function Preco() {
 
               <div className="flex-1 text-center">
                 <div className="flex flex-col items-center justify-center gap-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-gray-500 line-through">R$37,00</span>
-                    <span className="text-2xl font-bold">R$17,00</span>
+                  <div className="flex flex-col items-center gap-1">
+                    <span className="text-gray-400 text-lg line-through">R$37,00</span>
+                    <span className="text-5xl font-bold text-[#C4A484]">R$17,00</span>
                   </div>
                   <motion.a
                     href="https://payment.ticto.app/O17F77F98"
